@@ -1,0 +1,17 @@
+var mongoose=require('mongoose');
+var config=require('../config');
+mongoose.connect(config.dbUrl);
+exports.User=mongoose.model('user',new mongoose.Schema({
+    username:String,
+    password:String,
+    email:String,
+    avatar:String
+}));
+exports.Article=mongoose.model('article',new mongoose.Schema({
+    user:{type:mongoose.Schema.Types.ObjectId,ref:'user'},
+    title:String,
+    cont:String,
+    poster:String,
+    comments: [{user:{type:mongoose.Schema.Types.ObjectId,ref:'User'},cont:String,createAt:{type: Date, default: Date.now}}],
+    createAt:{type:Date,default:Date.now()}
+}))

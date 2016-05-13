@@ -1,0 +1,26 @@
+<%- include include/header.html %>
+<form action="/articles/add" enctype="multipart/form-data" method="post">
+    <input type="hidden" name="_id" value="<%=article._id%>">
+    <dl>
+        <dt><label for="title">标题</label></dt>
+        <dd><input value="<%=article.title%>" type="text" name="title" id="title" placeholder="标题"></dd>
+    </dl>
+    <dl>
+        <dt><label for="cont">内容</label></dt>
+        <dd>
+            <textarea name="cont" id="cont" cols="50" rows="10">
+                <%=article.cont%>
+            </textarea>
+        </dd>
+    </dl>
+    <dl>
+        <dt><label for="cont">图片</label></dt>
+        <dd>
+            <input type="file" name="poster">
+        </dd>
+    </dl>
+    <div>
+        <button type="submit">发布</button>
+    </div>
+</form>
+<%- include include/footer.html %>

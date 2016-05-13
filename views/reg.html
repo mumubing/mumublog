@@ -1,0 +1,19 @@
+<%- include include/header.html %>
+<form action="/users/reg" method="post">
+    <dl>
+        <dt><label for="username">用户名</label></dt>
+        <dd><input type="text" name="username" id="username" placeholder="用户名"></dd>
+    </dl>
+    <dl>
+        <dt><label for="username">邮箱</label></dt>
+        <dd><input type="text" name="email" id="email" placeholder="邮箱"></dd>
+    </dl>
+    <dl>
+        <dt><label for="password">密码</label></dt>
+        <dd><input type="password" name="password" id="password" placeholder="密码"></dd>
+    </dl>
+    <div>
+        <button type="submit">注册</button>
+    </div>
+</form>
+<%- include include/footer.html %>

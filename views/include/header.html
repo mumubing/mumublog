@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>木木的博客</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<div id="content">
+    <div class="col-left">
+        <div class="nav">
+            <a href="/" class="b-logo">
+                mumu'sblog
+            </a>
+
+
+            <div class="nav-menu">
+                <ul class="menu">
+                    <%
+                      if(user){
+                       %>
+                        <li class="menu-item">
+                            <a href="/articles/add">
+                                发表文章
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/users/logout">
+                                退出
+                            </a>
+                        </li>
+                     <%
+                      }else{
+                       %>
+                      <li class="menu-item">
+                        <a href="/users/reg">
+                            注册
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/users/login">
+                            登录
+                        </a>
+                    </li>
+                    <%
+                      }
+                    %>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-right">
+
+     <%
+        if(success){
+          %>
+        <div><%=success%></div>
+        <%
+        }
+        %>
+     <%
+        if(error){
+        %>
+         <div><%=error%></div>
+        <%
+        }
+        %>
